@@ -30,7 +30,7 @@ namespace BasicFitnessApp.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("NameOfExcercise")
+                    b.Property<string>("NameOfExercise")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -135,7 +135,13 @@ namespace BasicFitnessApp.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("integer");
 
+                    b.Property<int>("Experience")
+                        .HasColumnType("integer");
+
                     b.Property<int>("Gender")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Goal")
                         .HasColumnType("integer");
 
                     b.Property<decimal>("Height")
@@ -173,6 +179,9 @@ namespace BasicFitnessApp.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("ProfileId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("TargetMuscles")
                         .HasColumnType("integer");
 
                     b.Property<int>("TypeOfWorkout")

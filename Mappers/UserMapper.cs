@@ -24,7 +24,9 @@ public static class UserMapper
           Age = user.Profile.Age,
           Height = user.Profile.Height,
           Weight = user.Profile.Weight,
-          Gender = user.Profile.Gender
+          Gender = user.Profile.Gender,
+          Goal = user.Profile.Goal,
+          Experience = user.Profile.Experience
         };
     }
 }

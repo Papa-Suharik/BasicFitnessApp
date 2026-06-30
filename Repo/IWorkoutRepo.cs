@@ -4,5 +4,7 @@ namespace BasicFitnessApp.Repo;
 
 public interface IWorkoutRepo
 {
-    Task<UserProfile?> GetUserWithProfileById(Guid id);
+    Task<UserProfile?> GetUserProfileById(Guid id);
+    Task AddWorkoutAsync(Workout workout);
+    Task SaveChangesAsync();
 }

@@ -132,3 +132,10 @@ C:\Users\Work\Desktop\BasicFitnessApp\obj\Debug\net10.0\refint\BasicFitnessApp.d
 C:\Users\Work\Desktop\BasicFitnessApp\obj\Debug\net10.0\BasicFitnessApp.pdb
 C:\Users\Work\Desktop\BasicFitnessApp\obj\Debug\net10.0\BasicFitnessApp.genruntimeconfig.cache
 C:\Users\Work\Desktop\BasicFitnessApp\obj\Debug\net10.0\ref\BasicFitnessApp.dll
+C:\Users\Work\Desktop\BasicFitnessApp\bin\Debug\net10.0\FluentValidation.dll
+C:\Users\Work\Desktop\BasicFitnessApp\bin\Debug\net10.0\FluentValidation.AspNetCore.dll
+C:\Users\Work\Desktop\BasicFitnessApp\bin\Debug\net10.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Work\Desktop\BasicFitnessApp\bin\Debug\net10.0\OpenAI.dll
+C:\Users\Work\Desktop\BasicFitnessApp\bin\Debug\net10.0\System.ClientModel.dll
+C:\Users\Work\Desktop\BasicFitnessApp\bin\Debug\net10.0\System.Memory.Data.dll
+C:\Users\Work\Desktop\BasicFitnessApp\obj\Debug\net10.0\BasicFitnessApp.sourcelink.json
