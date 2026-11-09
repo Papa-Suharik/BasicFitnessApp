@@ -1,0 +1,16 @@
+bin/
+obj/
+
+.vs/
+.vscode/
+
+.git
+.github
+
+*.user
+*.suo
+*.docstates
+
+.env
+.Db_Store
+Thumbs.db

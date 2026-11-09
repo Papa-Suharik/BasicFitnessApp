@@ -1,0 +1,37 @@
+services:
+    basicfitnessapp:
+        image: papasuharik/basicfitnessapp:latest
+
+        container_name: basicfitnessapp
+
+        depends_on:
+            postgress:
+                condition: service_healthy
+
+        enviroment:
+
+    postgress:
+        image: postgress:17
+
+        container_name: basicfitnessapp_postgress
+        
+        restart: unless-stopped
+
+        healthcheck:
+            test: ["CMD_SHELL", "pg_isready -U ${DB_USER}"]
+            interval: 10s
+            timeout: 5s
+            retries: 5
+            start_period: 30s
+        
+        environment:
+            - name=value
+
+        ports:
+            - "5432:5432"
+        
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+    
+    volumes:
+        postgress_data:
