@@ -15,7 +15,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 using OpenAI;
-using OpenAI.Chat;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -110,6 +109,5 @@ app.UseSwaggerUI();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
-app.MapGet("/", () => "Hello World!");
 
 app.Run();

@@ -34,22 +34,3 @@ public enum GroupsOfMuscle
     Legs,
     FullBody
 }
-
-// [Flags]
-// public enum GroupsOfMuscle
-// {
-//     None = 0,
-//     Chest = 1 << 0,
-//     Back = 1 << 1,
-//     Biceps = 1 << 2,
-//     Triceps = 1 << 3,
-//     Shoulders = 1 << 4,
-//     Quads = 1 << 5,
-//     Hamstrings = 1 << 6,
-//     Glutes = 1 << 7,
-//     Calves = 1 << 8,
-//     Abdominals = 1 << 9,
-//     Obliques = 1 << 10,
-
-//     UpperBody = Chest | Shoulders | Triceps
-// }

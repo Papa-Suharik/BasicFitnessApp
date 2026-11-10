@@ -40,7 +40,7 @@ public class LoginService(ILoginRepo repo, IGlobalTokenHandler handler, IPasswor
     }
     public async Task<LoginResultDto> RefreshTokens(RefreshDto dto)
     {
-        var user = await repo.GetUserByIdAsync(dto.Id) ?? throw new UserNotFoundExcpetion($"No user found under {dto.Id} Id!");
+        var user = await repo.GetUserByIdAsync(dto.Id) ?? throw new AuthenticationFailedException($"The credentials entered don't match our records. Please try again or reset your password.");
 
         var oldRefreshToken = await VerifyToken(dto.RawToken);
 

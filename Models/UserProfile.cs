@@ -145,9 +145,9 @@ public enum Gender
 public enum Experience
 {
     NotSpecified,
-    Begginer, 
-    SomeExpirience,
-    Expirienced
+    Beginner, 
+    SomeExperience,
+    Experienced
 }
 
 public enum Goal
