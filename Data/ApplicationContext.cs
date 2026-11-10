@@ -1,6 +1,5 @@
 using BasicFitnessApp.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Extensions;
 
 namespace BasicFitnessApp.Data;
 

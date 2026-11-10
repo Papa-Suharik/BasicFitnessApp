@@ -15,7 +15,7 @@ public class UserController(IUserService service) : ControllerBase
     [HttpPost]
     [EndpointSummary("Create new User")]
     [EndpointDescription("Creates new User entity")]
-    [ProducesResponseType(typeof(UserDto), StatusCodes.Status201Created, Description = "User was registred successfully")]
+    [ProducesResponseType(typeof(UserDto), StatusCodes.Status201Created, Description = "User was registered successfully")]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Description = "Input data validation failed(i.e emailed is taken or wrong data format)")]
     public async Task<IActionResult> CreateUser([FromBody]UserRegistrationDto dto, CancellationToken cancellationToken)
     {
@@ -29,6 +29,7 @@ public class UserController(IUserService service) : ControllerBase
     [EndpointSummary("Get User Information")]
     [EndpointDescription("Retrives User information from database(profile is not included).")]
     [ProducesResponseType(typeof(UserDto), StatusCodes.Status200OK, Description = "User was fetched successfully")]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Description = "Boban")]
     public async Task<IActionResult> GetUser([FromRoute]Guid id, CancellationToken cancellationToken)
     {
         var user = await service.GetUserByIdAsync(id, cancellationToken);
