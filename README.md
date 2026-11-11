@@ -2,7 +2,7 @@
 
 Workouts Managment API
 
-<img width="1517" height="910" alt="image" src="https://github.com/user-attachments/assets/7aea87c6-9d60-4a54-ae99-88efad40227d" />
+![image alt](Images/Preview.png)
 
 A RESTful backend application for managing user profiles, authentication and personalized workout generation.
 
@@ -32,6 +32,6 @@ It provides auser authentication, profile managment and workout generatio using 
 
 ## Architecture
 
-<img width="1780" height="1123" alt="image" src="https://github.com/user-attachments/assets/bdb27cff-079d-44fd-8be4-58cfbd4a7f5d" />
+![image alt](Images/BasicFitnessApp.drawio.svg)
 
 
