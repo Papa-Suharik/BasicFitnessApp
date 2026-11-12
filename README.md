@@ -34,4 +34,15 @@ It provides auser authentication, profile managment and workout generatio using 
 
 ![image alt](Images/BasicFitnessApp.drawio.svg)
 
+## Tech Stack
+
+| Category | Technologies |
+|:---:|:---:|
+| Language | C# |
+| Framework | ASP.NET Core  |
+| Database | PostgreSQL |
+| ORM | Entity Framework Core |
+| Integration | REST API, OpenAI API |
+| Logging | Serilog |
+| Deployment | Docker, Docker Compose |
 
