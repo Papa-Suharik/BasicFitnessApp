@@ -39,10 +39,34 @@ It provides auser authentication, profile managment and workout generatio using 
 | Category | Technologies |
 |:---:|:---:|
 | Language | C# |
-| Framework | ASP.NET Core  |
+| Framework | ASP.NET Core |
+| Authentication | JWT Bearer |
+| Validation | Fluent Validation |
 | Database | PostgreSQL |
 | ORM | Entity Framework Core |
 | Integration | REST API, OpenAI API |
+| API Documentation | Swagger |
 | Logging | Serilog |
 | Deployment | Docker, Docker Compose |
+
+## Get Started 
+
+```bash
+git clone https://github.com/Papa-Suharik/BasicFitnessApp.git
+cd Yarn-Bot
+```
+Configure your environment variables and database connection, then run:
+
+```bash
+dotnet restore
+dotnet ef database update
+dotnet run
+```
+
+### Configuration
+
+## Deployment
+
+The application can be containerized and deployed using Docker Compose.
+
 
