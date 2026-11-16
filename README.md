@@ -65,6 +65,19 @@ dotnet run
 
 ### Configuration
 
+| Variable | Description |
+|:---|:---:|
+| `OPEN_AI_APIKEY` | API Key to external OpenAI language model |
+| `JWT_KEY` | Unqie Key used as salt while JWT creation and rotation |
+| `JWT_ISSUER` | Identifies who created and signed the JWT |
+| `JWT_AUDIENCE` | Identifies who means to accept the JWT |
+| `JWT_EXPIRATION_MINUTES` | Identifies lifetime of the JWT |
+| `DB_HOST` | PostgreSQL database host |
+| `DB_PORT` | PostgreSQL database port |
+| `DB_NAME` | PostgreSQL database name |
+| `DB_USER` | PostgreSQL database username |
+| `DB_PASSWORD` | PostgreSQL database password |
+
 ## Deployment
 
 The application can be containerized and deployed using Docker Compose.
