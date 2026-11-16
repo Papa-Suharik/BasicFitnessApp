@@ -15,13 +15,18 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 using OpenAI;
+using Serilog;
 
+Log.Logger = new LoggerConfiguration()
+.MinimumLevel.Information().MinimumLevel.Override("Microsoft.EntityFrameworkCore.Database.Command", Serilog.Events.LogEventLevel.Warning)
+.WriteTo.Console().WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day, retainedFileCountLimit: 30, shared: true).CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Host.UseSerilog();
 builder.Services.AddSingleton(sp =>
 {
-    var apiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
+    var apiKey = builder.Configuration["OpenAI:ApiKey"]!;
     var client = new OpenAIClient(apiKey);
     return client.GetChatClient("gpt-5.4-nano");
 });
@@ -31,7 +36,7 @@ builder.Services.AddProblemDetails(configure =>
 {
     configure.CustomizeProblemDetails = context =>
     {
-      context.ProblemDetails.Extensions.TryAdd("traceId", context.HttpContext.TraceIdentifier);  
+        context.ProblemDetails.Extensions.TryAdd("traceId", context.HttpContext.TraceIdentifier);
     };
 });
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
@@ -45,7 +50,7 @@ builder.Services.AddSwaggerGen(options =>
         Description = "API for fitness pet project"
     });
 
-    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    options.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
         Type = SecuritySchemeType.Http,
@@ -58,7 +63,7 @@ builder.Services.AddSwaggerGen(options =>
     options.AddSecurityRequirement(doc => new OpenApiSecurityRequirement
     {
         {
-            new OpenApiSecuritySchemeReference("Bearer"),
+            new OpenApiSecuritySchemeReference("bearer", doc),
             new List<string>()
         }
     });
@@ -99,9 +104,30 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ClockSkew = TimeSpan.FromSeconds(30),
             RequireSignedTokens = true
         };
+
+        o.Events= new JwtBearerEvents
+        {
+            OnAuthenticationFailed = context =>
+            {
+                Console.WriteLine(
+                    $"JWT ERROR: {context.Exception.GetType().Name}");
+
+                Console.WriteLine(
+                    $"MESSAGE: {context.Exception.Message}");
+
+                return Task.CompletedTask;
+            }
+        };
     });
 
 var app = builder.Build();
+
+using var scope = app.Services.CreateScope();
+
+var db = scope.ServiceProvider
+    .GetRequiredService<ApplicationContext>();
+
+await db.Database.MigrateAsync();
 
 app.UseExceptionHandler();
 app.UseSwagger();
