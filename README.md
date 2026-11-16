@@ -17,7 +17,7 @@ A RESTful backend application for managing user profiles, authentication and per
 
 Fitness-App is a backend application built with ASP.NET Core.
 
-It provides auser authentication, profile managment and workout generatio using OpenAi integration.
+It provides user authentication, profile managment and workout generatio using OpenAi integration.
 
 ## Features
 
@@ -53,7 +53,7 @@ It provides auser authentication, profile managment and workout generatio using 
 
 ```bash
 git clone https://github.com/Papa-Suharik/BasicFitnessApp.git
-cd Yarn-Bot
+cd BasicFitnessApp
 ```
 Configure your environment variables and database connection, then run:
 
@@ -68,7 +68,7 @@ dotnet run
 | Variable | Description |
 |:---|:---:|
 | `OPEN_AI_APIKEY` | API Key to external OpenAI language model |
-| `JWT_KEY` | Unqie Key used as salt while JWT creation and rotation |
+| `JWT_KEY` | Unqie Key used to sign the JWT|
 | `JWT_ISSUER` | Identifies who created and signed the JWT |
 | `JWT_AUDIENCE` | Identifies who means to accept the JWT |
 | `JWT_EXPIRATION_MINUTES` | Identifies lifetime of the JWT |
